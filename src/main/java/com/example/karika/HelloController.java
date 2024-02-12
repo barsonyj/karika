@@ -16,6 +16,8 @@ public class HelloController {
     @FXML private Button btTimer;
     @FXML private Slider srSpeed;
     @FXML private Label lbSpeed;
+    @FXML private Slider srRadius;
+    @FXML private Label lbRadius;
 
     private AnimationTimer timer;
     private boolean run = false;
@@ -45,7 +47,8 @@ public class HelloController {
     }
 
     private void mozgat() {
-        int r = 200;
+        int r = (int)srRadius.getValue();
+        lbRadius.setText("Radius: " + r);
         int x = (int)(300 + r * Math.cos(alfa/180.0*3.14))-32;
         int y = (int)(300 - r * Math.sin(alfa/180.0*3.14))-32;
         ball.setLayoutX(x);
