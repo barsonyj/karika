@@ -24,13 +24,18 @@ public class HelloController {
     private AnimationTimer timer;
     private boolean run = true;
 
+    private String[] iconNev = { "ball1", "ball2" };
+    private Image[] icon = new Image[2];
+    private ImageView ball;
+
     private Circle kor = new Circle(300, 300, 200, Color.LIGHTGREY);
-    private ImageView ball = new ImageView(new Image(getClass().getResourceAsStream("ball1.png")));
     private int alfa = 0;
 
     public void initialize() {
         pnJatek.setClip(new Rectangle(600, 600)); // Pane does not clip its content by default!
         pnJatek.getChildren().add(kor);
+        for (int i=0; i<2; i++) icon[i] = new Image(getClass().getResourceAsStream(iconNev[i] + ".png"));
+        ball = new ImageView(icon[0]);
         ball.setLayoutX(500-32);
         ball.setLayoutY(300-32);
         pnJatek.getChildren().add(ball);
@@ -63,6 +68,9 @@ public class HelloController {
         lbSpeed.setText("Speed: " + speed);
         alfa += speed;
     }
+
+    @FXML private void onBall1Clicked() { ball.setImage(icon[0]); }
+    @FXML private void onBall2Clicked() { ball.setImage(icon[1]); }
 
     /*
     RotateTransition rt = new RotateTransition(Duration.millis(2000));

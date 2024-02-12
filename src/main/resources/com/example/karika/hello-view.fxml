@@ -23,12 +23,20 @@
                </VBox.margin>
             </Slider>
             <Label fx:id="lbRadius" text="Radius: 200" />
-            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="64.0" fitWidth="64.0" onMousePressed="#onBall1Clicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ball1.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </ImageView>
+            <ImageView fx:id="ivBall2" fitHeight="64.0" fitWidth="64.0" onMousePressed="#onBall2Clicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@ball2.png" />
                </image>
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets top="5.0" />
                </VBox.margin>
             </ImageView>
          </children>
