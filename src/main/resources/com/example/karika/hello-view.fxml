@@ -7,15 +7,7 @@
 
 <HBox xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.karika.HelloController">
    <children>
-      <Pane fx:id="pnJatek" maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: lightgrey;">
-         <children>
-            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="268.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@ball2.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
+      <Pane fx:id="pnJatek" maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: lightgrey;" />
       <VBox alignment="TOP_CENTER" prefWidth="100.0">
          <children>
             <Button fx:id="btTimer" mnemonicParsing="false" onAction="#onTimerClicked" prefWidth="100.0" text="Start" />
@@ -31,6 +23,14 @@
                </VBox.margin>
             </Slider>
             <Label fx:id="lbRadius" text="Radius: 200" />
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ball2.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </ImageView>
          </children>
          <HBox.margin>
             <Insets left="5.0" />
