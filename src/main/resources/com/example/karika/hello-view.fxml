@@ -20,11 +20,12 @@
       <VBox alignment="TOP_CENTER" prefWidth="100.0">
          <children>
             <Button fx:id="btTimer" mnemonicParsing="false" onAction="#onTimerClicked" prefWidth="100.0" text="Start" />
-            <Slider max="5.0" min="1.0" value="1.0">
+            <Slider fx:id="srSpeed" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" snapToTicks="true" value="1.0">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
             </Slider>
+            <Label fx:id="lbSpeed" text="Speed: 1" />
          </children>
          <HBox.margin>
             <Insets left="5.0" />

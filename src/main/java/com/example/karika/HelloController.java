@@ -4,6 +4,7 @@ import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -13,6 +14,8 @@ public class HelloController {
 
     @FXML private Pane pnJatek;
     @FXML private Button btTimer;
+    @FXML private Slider srSpeed;
+    @FXML private Label lbSpeed;
 
     private AnimationTimer timer;
     private boolean run = false;
@@ -47,7 +50,9 @@ public class HelloController {
         int y = (int)(300 - r * Math.sin(alfa/180.0*3.14))-32;
         ball.setLayoutX(x);
         ball.setLayoutY(y);
-        alfa += 4;
+        int speed = (int)srSpeed.getValue();
+        lbSpeed.setText("Speed: " + speed);
+        alfa += speed;
     }
 
     /*
