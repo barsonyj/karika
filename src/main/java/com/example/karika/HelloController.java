@@ -1,6 +1,7 @@
 package com.example.karika;
 
 import javafx.animation.AnimationTimer;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -28,7 +29,14 @@ public class HelloController {
      .setShowTickLabels(true/false); // Mutassa-e az osztásokat számmal
      .setMajorTickUnit(value); // Mekkora egységet jelentsenek a nagy osztások (hosszú vonalakkal)
      .setMinorTickCount(value); // Hány kis osztás (rövid vonalakkal) legyen a nagy osztások között
-     .setSnapToTicks(true/false); // Elengedéskor a jel igazodjon-e osztáshoz
+     .setSnapToTicks(true/false); // Elengedéskor a jel igazodjon-e az osztáshoz
+     */
+
+    /*
+    Slider -> Label
+     private IntegerProperty a = new SimpleIntegerProperty();
+     private DoubleProperty d = new SimpleDoubleProperty();
+
      */
 
     private AnimationTimer timer;
@@ -42,6 +50,8 @@ public class HelloController {
     private int alfa = 0;
 
     public void initialize() {
+        lbSpeed.textProperty().bind(Bindings.format("Speed: %.0f", srSpeed.valueProperty()));
+        lbRadius.textProperty().bind(Bindings.format("Radius: %.0f", srRadius.valueProperty()));
         pnJatek.setClip(new Rectangle(600, 600)); // Pane does not clip its content by default!
         pnJatek.getChildren().add(kor);
         for (int i=0; i<2; i++) icon[i] = new Image(getClass().getResourceAsStream(iconNev[i] + ".png"));
@@ -69,13 +79,13 @@ public class HelloController {
     private void mozgat() {
         int r = (int)srRadius.getValue();
         kor.setRadius(r);
-        lbRadius.setText("Radius: " + r);
+        //lbRadius.setText("Radius: " + r);
         int x = (int)(300 + r * Math.cos(alfa/180.0*3.14))-32;
         int y = (int)(300 - r * Math.sin(alfa/180.0*3.14))-32;
         ball.setLayoutX(x);
         ball.setLayoutY(y);
         int speed = (int)srSpeed.getValue();
-        lbSpeed.setText("Speed: " + speed);
+        //lbSpeed.setText("Speed: " + speed);
         alfa += speed;
     }
 
