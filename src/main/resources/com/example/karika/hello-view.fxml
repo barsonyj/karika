@@ -11,7 +11,7 @@
       <VBox alignment="TOP_CENTER" prefWidth="100.0">
          <children>
             <Button fx:id="btTimer" mnemonicParsing="false" onAction="#onTimerClicked" prefWidth="100.0" text="Stop" />
-            <Slider fx:id="srSpeed" majorTickUnit="2.0" max="10.0" min="1.0" minorTickCount="1" snapToTicks="true" value="1.0">
+            <Slider fx:id="srSpeed" blockIncrement="2.0" majorTickUnit="3.0" max="10.0" min="1.0" minorTickCount="2" snapToTicks="true" value="1.0">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>

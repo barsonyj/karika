@@ -21,6 +21,16 @@ public class HelloController {
     @FXML private Slider srRadius;
     @FXML private Label lbRadius;
 
+    /*
+    Slider
+     .setBlockIncrement(value); // Mekkorát változzon, ha a nyilakkal lépünk
+     .setShowTickMarks(true/false); // Mutassa-e az osztásokat
+     .setShowTickLabels(true/false); // Mutassa-e az osztásokat számmal
+     .setMajorTickUnit(value); // Mekkora egységet jelentsenek a nagy osztások (hosszú vonalakkal)
+     .setMinorTickCount(value); // Hány kis osztás (rövid vonalakkal) legyen a nagy osztások között
+     .setSnapToTicks(true/false); // Elengedéskor a jel igazodjon-e osztáshoz
+     */
+
     private AnimationTimer timer;
     private boolean run = true;
 
